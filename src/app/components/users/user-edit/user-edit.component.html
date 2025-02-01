@@ -1,0 +1,63 @@
+<div class="user-edit-container">
+  <mat-card [formGroup]="userEditForm">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon color="primary">manage_accounts</mat-icon> Edit User
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <div class="input-container">
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput type="text" formControlName="firstname" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput type="text" formControlName="lastname" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="login" autocomplete="off" required>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput type="email" formControlName="email" autocomplete="off" required>
+        <mat-error *ngIf="userEditForm.get('email')?.invalid && userEditForm.get('email')?.touched">
+          Please enter a valid email.
+        </mat-error>
+      </mat-form-field>
+
+      <div class="input-container">
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" autocomplete="off" required>
+          <mat-error *ngIf="userEditForm.get('password')?.invalid && userEditForm.get('password')?.touched">
+            Password is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>Repeat Password</mat-label>
+          <input matInput type="password" formControlName="passwordAgain" autocomplete="off" required>
+          <mat-error *ngIf="userEditForm.get('passwordAgain')?.value !== userEditForm.get('password')?.value">
+            Passwords do not match.
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <div class="error-alert">{{ errorMessage }}</div>
+
+    <mat-card-actions align="end" class="button-group">
+      <button class="cancel-btn" mat-button (click)="closeEdit()">Cancel</button>
+      <button class="update-btn" mat-button (click)="handleUpdate()" [disabled]="userEditForm.invalid">Update</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

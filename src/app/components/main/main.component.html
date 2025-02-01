@@ -1,0 +1,5 @@
+<app-header *ngIf="authService.authenticated==true"></app-header>
+
+<router-outlet></router-outlet>
+
+<app-footer *ngIf="authService.authenticated==true"></app-footer>

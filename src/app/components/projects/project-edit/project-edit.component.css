@@ -1,0 +1,58 @@
+textarea {
+    resize: none;
+}
+
+.form-group {
+    display: flex;
+    gap: 16px;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.margin-gap {
+    margin-left: 10px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cancel-button {
+    background-color: #d9534f;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cancel-button:hover {
+    background-color: #c9302c;
+}
+
+.confirm-button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.confirm-button:hover {
+    background-color: #4cae4c;
+}

@@ -1,0 +1,89 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.dark-backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.cdk-overlay-pane.mat-mdc-dialog-panel {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.flex-row {
+  display: flex; 
+  width: 100%;
+}
+
+.margin-gap-row {
+  flex: 1; 
+  margin-left: 1%;
+}
+
+.create-button {
+  background-color: #0c7cfc;
+  border: none;
+  color: white;
+  padding: 0.4%;
+  border-radius: 7px;
+  width: 15%;
+}
+
+.update-button {
+  background-color: #5db2c4;
+  border: none;
+  color: white;
+  padding: 0.4%;
+  border-radius: 7px;
+  width: 10%;
+}
+
+.delete-button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 0.4%;
+  border-radius: 7px;
+  width: 15%;
+}
+
+.back-button {
+  background-color: #5db2c4;
+  margin-right: 1%;
+  border: none;
+  color: white;
+  padding: 0.4%;
+  border-radius: 7px;
+  width: 10%;
+}
+
+.errorMessage {
+  color: red;
+  padding-left: 18px;
+}
+
+.header-tab {
+  padding : 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e8e8e8;
+}
+
+.title {
+  color: blue;
+}
+
+.action-button-edit {
+  border: none;
+  color: white;
+  background-color: #54ac4c;
+  border-radius: 7px;
+}
+
+.action-button-delete {
+  border: none;
+  color: white;
+  background-color: #dc4244;
+  border-radius: 7px;
+}

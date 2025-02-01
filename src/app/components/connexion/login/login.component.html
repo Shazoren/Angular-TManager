@@ -1,0 +1,66 @@
+<div class="login-container">
+  <mat-card *ngIf="profile == 'USER'" [formGroup]="loginFormGroup">
+    <mat-card-header>
+      <mat-card-title><mat-icon color="primary">login</mat-icon> User Sign In</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput formControlName="login" autocomplete="off" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" autocomplete="off" required>
+      </mat-form-field>
+
+      <div class="error-message">{{ errorMessage }}</div>
+    </mat-card-content>
+
+    <mat-card-actions class="login-actions">
+      <a class="signup-link" routerLink="/signup">Create a User Account</a>
+      <div class="login-buttons">
+        <button mat-button routerLink="/" class="back-btn">Back</button>
+        <button mat-button class="login-btn" (click)="login()">Login</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card *ngIf="profile == 'CLIENT'" [formGroup]="loginFormGroup">
+    <mat-card-header>
+      <mat-card-title><mat-icon color="primary">login</mat-icon> Client Sign In</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput formControlName="lastname" autocomplete="off" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="firstname" autocomplete="off" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" autocomplete="off" required>
+      </mat-form-field>
+
+      <div class="error-message">{{ errorMessage }}</div>
+    </mat-card-content>
+
+    <mat-card-actions class="login-actions">
+      <a class="signup-link" routerLink="/signup">Create a Client Account</a>
+      <div class="login-buttons">
+        <button mat-button routerLink="/" class="back-btn">Back</button>
+        <button mat-button class="login-btn" (click)="login()">Login</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

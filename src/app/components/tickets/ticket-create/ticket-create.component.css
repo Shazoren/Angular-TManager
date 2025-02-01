@@ -1,0 +1,56 @@
+.form-wrapper {
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.input-container {
+  display: flex;
+  gap: 14px;
+}
+
+.input-box {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+.submit-btn {
+  background-color: #0275d8;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #025aa5;
+}

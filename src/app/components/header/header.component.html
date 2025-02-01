@@ -1,0 +1,32 @@
+<header id="header" class="header d-flex align-items-center">
+  <div class="navbar-container container-fluid position-relative d-flex justify-content-between align-items-center">
+
+      <!-- Navigation Menu -->
+      <nav id="navmenu" class="navmenu">
+          <ul class="menu-items">
+              <li>
+                  <a class="logo d-flex align-items-center">
+                      <h1 class="sitename"><b>Manager</b></h1>
+                  </a>
+              </li>
+              <li><a routerLink="/main/home" routerLinkActive="active">Home</a></li>
+              <li *ngIf="authService.isAdmin() || authService.isUser()">
+                  <a routerLink="/main/users" routerLinkActive="active">Users</a>
+              </li>
+              <li *ngIf="authService.isAdmin() || authService.isClient()">
+                  <a routerLink="/main/projects" routerLinkActive="active">Projects</a>
+              </li>
+              <li *ngIf="authService.isAdmin() || authService.isClient()">
+                  <a routerLink="/main/clients" routerLinkActive="active">Clients</a>
+              </li>
+              <li><a routerLink="/main/tickets" routerLinkActive="active">Tickets</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <button class="logout-btn" (click)="logout()">
+          <mat-icon>logout</mat-icon> Disconnect
+      </button>
+
+  </div>
+</header>

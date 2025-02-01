@@ -1,0 +1,36 @@
+<mat-card [formGroup]="signUpUserFormGroup">
+    <mat-card-header>
+      <mat-card-title>Créer un compte utilisateur</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content><br>
+      <mat-form-field style="width: 100%;" appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input type="text" matInput formControlName="lastname">
+      </mat-form-field><br />
+      <mat-form-field style="width: 100%;" appearance="outline">
+        <mat-label>Prénom</mat-label>
+        <input type="text" matInput formControlName="firstname">
+      </mat-form-field>
+      <mat-form-field style="width: 100%;" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field style="width: 100%;" appearance="outline">
+        <mat-label>Identifiant</mat-label>
+        <input type="text" matInput formControlName="login">
+      </mat-form-field>
+      <mat-form-field style="width: 100%;" appearance="outline">
+        <mat-label>Mot de passe</mat-label>
+        <input type="password" matInput formControlName="password">
+      </mat-form-field>
+    </mat-card-content>
+    <div class="errorMessage">{{errorMessage}}</div>
+    <mat-card-actions class="signup-actions">
+      <a class="login-link" routerLink="/login">J'ai un compte</a>
+      <div class="signup-buttons-actions">
+        <button mat-button routerLink="/" class="signup-back-button" >Retour</button>
+        <button mat-button class="signup-button" (click)="userSignUp()">Création et Connexion</button>
+      </div>
+    </mat-card-actions>
+</mat-card>

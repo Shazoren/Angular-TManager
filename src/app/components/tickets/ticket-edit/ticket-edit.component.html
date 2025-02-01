@@ -1,0 +1,39 @@
+<div class="edit-ticket-container">
+  <mat-card [formGroup]="ticketEditForm">
+      <mat-card-header>
+          <mat-card-title>
+              <mat-icon color="primary">edit</mat-icon> Edit Ticket
+          </mat-card-title>
+      </mat-card-header>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+          <div class="input-container">
+              <mat-form-field class="input-box" appearance="outline">
+                  <mat-label>Ticket Title</mat-label>
+                  <input matInput formControlName="title">
+              </mat-form-field>
+
+              <mat-form-field class="input-box" appearance="outline">
+                  <mat-label>Submission Date</mat-label>
+                  <input type="date" matInput formControlName="date">
+              </mat-form-field>
+          </div>
+
+          <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Issue Description</mat-label>
+              <textarea matInput rows="4" formControlName="description"></textarea>
+          </mat-form-field>
+
+          <mat-checkbox formControlName="isClosed">Resolved</mat-checkbox>
+      </mat-card-content>
+
+      <div class="error-alert">{{ errorMessage }}</div>
+
+      <mat-card-actions align="end" class="button-group">
+          <button class="cancel-btn" mat-button (click)="closeEdit()">Cancel</button>
+          <button class="update-btn" mat-button (click)="handleUpdate()">Update</button>
+      </mat-card-actions>
+  </mat-card>
+</div>

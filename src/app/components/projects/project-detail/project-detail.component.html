@@ -1,0 +1,46 @@
+<div style="padding: 2%;">
+  <mat-card>
+      <mat-card-header>
+          <mat-card-title>
+              <mat-icon>person</mat-icon> Client #{{ client.id }} - {{ client.firstname }} {{ client.lastname }}
+          </mat-card-title>
+          <mat-card-subtitle>{{ client.email }}</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-divider></mat-divider>
+      
+      <mat-card-content>
+          <mat-list>
+              <mat-list-item>
+                  <mat-icon>call</mat-icon>
+                  <span>Phone: <strong>{{ client.phoneNumber }}</strong></span>
+              </mat-list-item>
+
+              <mat-list-item *ngIf="project && !project.isClosed">
+                  <mat-icon>work</mat-icon>
+                  <span>Current Project: <strong>{{ project.name || 'None' }}</strong></span>
+              </mat-list-item>
+
+              <mat-list-item *ngIf="project && !project.isClosed">
+                  <mat-icon>event</mat-icon>
+                  <span>Project Date: <strong>{{ (project.date | date:'MM/dd/yyyy') || 'Not Available' }}</strong></span>
+              </mat-list-item>
+
+              <mat-list-item *ngIf="project && !project.isClosed">
+                  <mat-icon>info</mat-icon>
+                  <span>Description:</span>
+              </mat-list-item>
+              <p *ngIf="project && !project.isClosed"><strong>{{ project.description }}</strong></p>
+
+              <mat-list-item *ngIf="project?.isClosed" class="project-closed">
+                  <mat-icon>check_circle</mat-icon>
+                  <span><strong>Project Completed</strong></span>
+              </mat-list-item>
+          </mat-list>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+          <button mat-raised-button color="primary" (click)="close()">Back</button>
+      </mat-card-actions>
+  </mat-card>
+</div>

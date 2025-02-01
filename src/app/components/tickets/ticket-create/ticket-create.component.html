@@ -1,0 +1,37 @@
+<div class="form-wrapper">
+  <mat-card [formGroup]="ticketCreateForm">
+      <mat-card-header>
+          <mat-card-title>
+              <mat-icon color="primary">report_problem</mat-icon> Submit a Ticket
+          </mat-card-title>
+      </mat-card-header>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+          <div class="input-container">
+              <mat-form-field class="input-box" appearance="outline">
+                  <mat-label>Ticket Title</mat-label>
+                  <input matInput formControlName="title">
+              </mat-form-field>
+
+              <mat-form-field class="input-box" appearance="outline">
+                  <mat-label>Submission Date</mat-label>
+                  <input type="date" matInput formControlName="date">
+              </mat-form-field>
+          </div>
+
+          <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Describe the Issue</mat-label>
+              <textarea matInput rows="4" formControlName="description"></textarea>
+          </mat-form-field>
+      </mat-card-content>
+
+      <div class="error-message">{{ errorMessage }}</div>
+
+      <mat-card-actions align="end" class="button-group">
+          <button class="cancel-btn" mat-button (click)="closeCreate()">Cancel</button>
+          <button class="submit-btn" mat-button (click)="handleCreate()">Submit</button>
+      </mat-card-actions>
+  </mat-card>
+</div>

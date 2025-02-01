@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstname": "admin",
+      "lastname": "ADMIN",
+      "email": "",
+      "login": "admin",
+      "password": "1234",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "role": "USER",
+      "lastname": "John",
+      "firstname": "DOE",
+      "email": "john.doe@gmail.com",
+      "login": "john",
+      "password": "1234"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "firstname": "zaeaeazezeaze",
+      "lastname": "azeaze",
+      "phoneNumber": "aeaze",
+      "email": "zaeaze",
+      "projectId": "1"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "clients": [
+        {
+          "id": "1",
+          "firstname": "zaeaeazezeaze",
+          "lastname": "azeaze",
+          "phoneNumber": "aeaze",
+          "email": "zaeaze",
+          "projectId": "1"
+        }
+      ],
+      "date": "1231-03-12",
+      "name": "eazeae",
+      "description": "azeaeaezaeazeaze",
+      "isClosed": false
+    }
+  ],
+  "tickets": []
+}

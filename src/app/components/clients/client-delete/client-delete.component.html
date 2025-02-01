@@ -1,0 +1,20 @@
+<div class="delete-confirmation-container">
+  <mat-card>
+      <mat-card-header class="delete-header">
+          <mat-icon color="warn">warning</mat-icon>
+          <mat-card-title>Are you sure you want to delete?</mat-card-title>
+      </mat-card-header>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+          <p class="delete-message">This action cannot be undone.</p>
+          <div class="error-message">{{ errorMessage }}</div>
+      </mat-card-content>
+
+      <mat-card-actions align="end" class="button-group">
+          <button class="cancel-btn" mat-button (click)="closeEdit()">Undo</button>
+          <button class="delete-btn" mat-button (click)="handleDelete()">Delete</button>
+      </mat-card-actions>
+  </mat-card>
+</div>

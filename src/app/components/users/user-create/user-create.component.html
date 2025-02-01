@@ -1,0 +1,40 @@
+<div style="padding: 3%;">
+    <mat-card [formGroup]="userCreateForm">
+      <mat-card-header>
+        <mat-card-title>Ajouter un utilisateur</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content><br>
+        <div class="flex-row">
+          <mat-form-field style="flex: 1;" appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput formControlName="lastname">
+          </mat-form-field>
+          <mat-form-field class="margin-gap-row" appearance="outline">
+              <mat-label>Prénom</mat-label>
+              <input matInput formControlName="firstname">
+          </mat-form-field>
+        </div>
+        <mat-form-field style="width: 100%;" appearance="outline">
+            <mat-label>Adresse mail</mat-label>
+            <input matInput formControlName="email">
+        </mat-form-field>
+        <div class="flex-row">
+            <mat-form-field style="flex: 1;" appearance="outline">
+              <mat-label>Identifiant</mat-label>
+              <input matInput formControlName="login">
+            </mat-form-field>
+            <mat-form-field class="margin-gap-row" appearance="outline">
+                <mat-label>Mot de passe</mat-label>
+                <input type="password" matInput formControlName="password">
+            </mat-form-field>
+        </div>
+      </mat-card-content>
+      <div class="errorMessage">{{errorMessage}}</div>
+      <mat-card-actions align="end" style="margin-right: 1%;">
+        <button class="back-button" mat-button (click)="closeCreate()">Annuler</button>
+        <button class="create-button" mat-button (click)="handleCreate()">Valider</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

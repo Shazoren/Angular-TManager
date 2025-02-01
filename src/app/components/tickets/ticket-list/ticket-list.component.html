@@ -1,0 +1,73 @@
+<div class="ticket-management">
+  <div class="ticket-panel">
+      <div class="panel-header">
+          <div class="panel-title">Ticket Management</div>
+          <button class="ticket-add-btn" (click)="handleCreate()">
+              <mat-icon>add_circle</mat-icon> Create Ticket
+          </button>
+      </div>
+
+      <div class="panel-content">
+          <mat-card-content>
+              <mat-form-field appearance="outline" class="search-field">
+                  <mat-label>Search</mat-label>
+                  <input matInput (keyup)="applyFilter($event)" placeholder="Enter ticket details..."/>
+              </mat-form-field>
+
+              <table class="ticket-table" mat-table [dataSource]="tickets" matSort>
+                  
+                  <ng-container matColumnDef="id">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+                      <td mat-cell *matCellDef="let ticket">{{ ticket.id }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="title">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+                      <td mat-cell *matCellDef="let ticket">{{ ticket.title }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="date">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+                      <td mat-cell *matCellDef="let ticket">{{ ticket.date | date:'MM/dd/yyyy' }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="description">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+                      <td mat-cell *matCellDef="let ticket">{{ ticket.description }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="isClosed">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+                      <td mat-cell *matCellDef="let ticket" 
+                          [ngClass]="{'ticket-status-closed': ticket.isClosed, 'ticket-status-open': !ticket.isClosed}">
+                          {{ ticket.isClosed ? 'Resolved' : 'Open' }}
+                      </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="modify" *ngIf="authService.isAdmin()">
+                      <th mat-header-cell *matHeaderCellDef>Edit</th>
+                      <td mat-cell *matCellDef="let ticket">
+                          <button class="edit-btn" mat-icon-button (click)="handleEdit(ticket); $event.stopPropagation()">
+                              <mat-icon color="primary">edit</mat-icon>
+                          </button>
+                      </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="delete" *ngIf="authService.isAdmin()">
+                      <th mat-header-cell *matHeaderCellDef>Delete</th>
+                      <td mat-cell *matCellDef="let ticket">
+                          <button class="delete-btn" mat-icon-button (click)="handleDelete(ticket); $event.stopPropagation()">
+                              <mat-icon color="warn">delete</mat-icon>
+                          </button>
+                      </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let ticket; columns: displayedColumns;"></tr>
+              </table>
+
+              <mat-paginator style="background-color: white;" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </mat-card-content>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+.client-management {
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.client-panel {
+    width: 100%;
+    max-width: 900px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.panel-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.client-add-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.client-add-btn:hover {
+    background-color: #0056b3;
+}
+
+.search-field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.client-table {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clickable-row {
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.clickable-row:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.edit-btn, .delete-btn {
+    cursor: pointer;
+}
+
+.edit-btn mat-icon {
+    color: #007bff;
+}
+
+.delete-btn mat-icon {
+    color: #d9534f;
+}
